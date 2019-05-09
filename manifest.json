@@ -1,0 +1,32 @@
+{
+  "name": "Page Font Styler",
+  "description" : "Play with target page properties",
+  "version": "2019.0.1",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "Page Font Styler",
+    "default_icon": "./img/pageFontStyler_16.png"
+  },
+  "icons": {
+    "16": "./img/pageFontStyler_16.png",
+    "32": "./img/pageFontStyler_32.png",
+    "64": "./img/pageFontStyler_64.png",
+    "128": "./img/pageFontStyler_128.png",
+    "256": "./img/pageFontStyler_256.png",
+    "512": "./img/pageFontStyler_512.png"
+  },
+  "background" : {
+    "scripts" : ["./js/eventPage.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://developer.chrome.com/*"],
+      "js": ["./js/content.js","./js/jquery-3.4.1.min.js"],
+      "css":["./css/content.css"]
+    }
+  ]
+,
+"permissions": ["tabs","https://developer.chrome.com/*"]
+}
